@@ -1,7 +1,7 @@
 ## About
 VSCode doesn't highlight PHP syntax correctly in heredoc (or variabls concatenated in strings).
 
-I'm experimenting with different methods of PHP templating and the lack of highlighting when using PHP within heredoc was getting rather irritating, so I saught to fix that. This extension is compatible with both .php and .phtml files.
+I'm experimenting with different methods of PHP templating and the lack of highlighting when using PHP within heredoc was getting rather irritating, so I sought to fix that. This extension is compatible with both .php and .phtml files.
 
 I included my user settings.json for the colors I'm using as well. These settings also effect non heredoc variables within double quotes as well.
 
