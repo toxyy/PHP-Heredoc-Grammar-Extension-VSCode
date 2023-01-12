@@ -7,6 +7,8 @@ I included my user settings.json for the colors I'm using as well. These setting
 
 Includede test files are from my own PHP templating experiments that motivated this project.
 
+Vsix file included for easy install.
+
 ## Method
 At first I achieved this all in a single regex query in testing, but VSCode doesn't like multi line matches for tokens, so I took an alternative approach.
 
@@ -16,3 +18,8 @@ I finished this over a month ago and didn't release it because I wanted to add a
 
 ## Screenshots
 
+![Test_1](toxyy.github.io/phpheredocvscode/test_1.png)
+
+![Test_2](toxyy.github.io/phpheredocvscode/test_2.png)
+
+![Test_31](toxyy.github.io/phpheredocvscode/test_3.png)
