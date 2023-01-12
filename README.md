@@ -5,7 +5,7 @@ I'm experimenting with different methods of PHP templating and the lack of highl
 
 I included my user settings.json for the colors I'm using as well. These settings also effect non heredoc variables within double quotes as well.
 
-Includede test files are from my own PHP templating experiments that motivated this project.
+Included test files are from my own PHP templating experiments that motivated this project.
 
 Vsix file included for easy install.
 
