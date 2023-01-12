@@ -18,8 +18,8 @@ I finished this over a month ago and didn't release it because I wanted to add a
 
 ## Screenshots
 
-![Test_1](toxyy.github.io/phpheredocvscode/test_1.png)
+![Test_1](https://toxyy.github.io/phpheredocvscode/test_1.png)
 
-![Test_2](toxyy.github.io/phpheredocvscode/test_2.png)
+![Test_2](https://toxyy.github.io/phpheredocvscode/test_2.png)
 
-![Test_31](toxyy.github.io/phpheredocvscode/test_3.png)
+![Test_31](https://toxyy.github.io/phpheredocvscode/test_3.png)
