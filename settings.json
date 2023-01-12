@@ -1,7 +1,5 @@
 {
     "workbench.colorTheme": "Visual Studio Dark",
-    "cwtools.cache.stellaris": "d:\\Steam Games\\steamapps\\common\\Stellaris",
-    "editor.defaultFormatter": "tboby.cwtools-vscode",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
@@ -59,25 +57,5 @@
                  }
             },
         ]
-    },
-    "editor.unicodeHighlight.allowedCharacters": {
-        "️": true
-    },
-    "[php]": {
-        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-    },
-    "phpstormFormatter.ideBinPath": "C:/Program Files/JetBrains/PhpStorm 2021.3/bin",
-    "phpstormFormatter.styleGuidePath": "D:/Downloads/phpbb.xml",
-    "files.eol": "\n",
-    "intelephense.environment.phpVersion": "8.1.5",
-    "php.validate.run": "onType",
-    "php.debug.executablePath": "D:/php-8.1.5/php.exe",
-    "php.validate.executablePath": "D:/php-8.1.5/php.exe",
-    "intelephense.telemetry.enabled": false,
-    "emmet.syntaxProfiles": {
-    
-    },
-    "templateLiteralEditor.regexes": {
-        "php": "(<<<['\"]?([a-zA-Z]*)['\"]?)([\\s\\S]*?)(\\2)"
     }
 }
