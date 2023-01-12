@@ -1,0 +1,83 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "cwtools.cache.stellaris": "d:\\Steam Games\\steamapps\\common\\Stellaris",
+    "editor.defaultFormatter": "tboby.cwtools-vscode",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "string.unquoted.heredoc.php punctuation.section.array.begin.php",
+                    "string.unquoted.heredoc.php punctuation.section.array.end.php",
+                    "string.unquoted.heredoc.php variable.other.php punctuation.definition.variable.php",
+                    "string.unquoted.heredoc.php meta.embedded.quoted.double.brackets.php variable.other.php punctuation.definition.variable.php"
+                ],
+                "settings": {
+                "foreground": "#569CD6",
+                }
+            },
+            {
+                "scope": [
+                    "string.quoted.double.php punctuation.definition.variable.php",
+                    "string.quoted.double.php variable.other.php",
+                    "string.quoted.double.html variable.other.php",
+                    "string.unquoted.heredoc.php string.quoted.double.html variable.other.php punctuation.definition.variable.php",
+                    "string.unquoted.heredoc.php string.quoted.double.php variable.other.php punctuation.definition.variable.php",
+                    "string.unquoted.heredoc.php meta.embedded.quoted.double.brackets.php string.quoted.double.php meta.embedded.quoted.double.php variable.other.php punctuation.definition.variable.php"
+                ],
+                "settings": {
+                "foreground": "#B5CEA8",
+                }
+            },
+            {
+                "scope": [
+                    "string.quoted.double.php punctuation.section.array.begin.php",
+                    "string.quoted.double.php punctuation.section.array.end.php"
+                ],
+                "settings": {
+                "foreground": "#569CD6",
+                }
+            },
+            {
+                "scope": [
+                    "string.unquoted.heredoc.php punctuation.definition.variable.php",
+                ],
+                "settings": {
+                "foreground": "#808080",
+                }
+            },
+            {
+                "scope": [
+                    "string.unquoted.heredoc.php punctuation.definition.begin.bracket.round.php",
+                    "string.unquoted.heredoc.php punctuation.definition.end.bracket.round.php",
+                    "string.unquoted.heredoc.php punctuation.definition.end.bracket.round.php",
+                    "punctuation.section.array.begin.quoted.double.heredoc",
+                    "punctuation.section.array.end.quoted.double.heredoc",
+                    "punctuation.definition.variable.quoted.double.heredocc"
+                 ],
+                 "settings": {
+                 "foreground": "#EED600",
+                 }
+            },
+        ]
+    },
+    "editor.unicodeHighlight.allowedCharacters": {
+        "️": true
+    },
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "phpstormFormatter.ideBinPath": "C:/Program Files/JetBrains/PhpStorm 2021.3/bin",
+    "phpstormFormatter.styleGuidePath": "D:/Downloads/phpbb.xml",
+    "files.eol": "\n",
+    "intelephense.environment.phpVersion": "8.1.5",
+    "php.validate.run": "onType",
+    "php.debug.executablePath": "D:/php-8.1.5/php.exe",
+    "php.validate.executablePath": "D:/php-8.1.5/php.exe",
+    "intelephense.telemetry.enabled": false,
+    "emmet.syntaxProfiles": {
+    
+    },
+    "templateLiteralEditor.regexes": {
+        "php": "(<<<['\"]?([a-zA-Z]*)['\"]?)([\\s\\S]*?)(\\2)"
+    }
+}

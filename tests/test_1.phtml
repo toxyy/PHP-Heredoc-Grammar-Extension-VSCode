@@ -1,0 +1,23 @@
+<?php
+$html = "";
+foreach($data_ary as $data):
+if(is_array($data) && $data['type']	===	'post'):
+$html .= <<<HTML
+<article id="$data[post_id]" class="post">
+    <h4>
+        <div id="$prefix">
+            <a href="/$prefix/users/$data[user_id]" target="_top">$data[author]</a>
+            <a href="#$data[post_id]" target="_top">#</a>
+        </div>
+    </h4>
+    <p>$data[content]</p>
+    <footer>
+        <p>$data[signature]</p>
+        <a href="#" target="_top">^</a>
+    </footer>
+</article>
+
+HTML;
+endif;
+endforeach;
+return $html;

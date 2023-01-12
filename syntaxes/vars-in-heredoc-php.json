@@ -1,0 +1,235 @@
+{
+  "scopeName": "variable.quoted.double.heredoc",
+  "injectionSelector": "L:string.unquoted.heredoc.php meta.embedded.html",
+  "patterns": [
+    {
+      "include": "#variable-quoted-double-heredoc"
+    },
+    {
+      "include": "#variable-heredoc-brackets"
+    }
+  ],
+  "repository": {
+    "variable-quoted-double-heredoc": {
+      "match": "(?<!{)(\\$)([a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*+)(?:(\\[)((\\$)([a-zA-Z_\\x7f-\\xff][a-zA-Z0-9_\\x7f-\\xff]*+)|([^\\'\"\\s]*?))(\\]))??(?!\\[)",
+      "captures": {
+        "0": { "name": "meta.embedded.quoted.double.php" },
+        "1": { "name": "variable.other.php punctuation.definition.variable.php"},
+        "2": { "name": "variable.other.php" },
+        "3": { "name": "punctuation.section.array.begin.php" },
+        "4": { "name": "string.quoted.double.php" },
+        "5": { "name": "string.quoted.double.php variable.other.php punctuation.definition.variable.php"},
+        "6": { "name": "string.quoted.double.php variable.other.php" },
+        "8": { "name": "punctuation.section.array.end.php" }
+      }
+    },
+    "variable-heredoc-brackets": {
+      "begin": "({)(\\$)",
+      "end": "}",
+      "name": "meta.embedded.quoted.double.brackets.php",
+      "beginCaptures": {
+          "1": { "name": "string.variable.php punctuation.definition.variable.php" },
+          "2": { "name": "variable.other.php punctuation.definition.variable.php" }
+      },
+      "endCaptures": {
+          "0": { "name": "string.variable.php punctuation.definition.variable.php" }
+      },
+      "patterns": [
+        {
+          "begin": "'",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.php"
+            }
+          },
+          "end": "'",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.php"
+            }
+          },
+          "name": "string.quoted.single.php",
+          "patterns": [
+            {
+              "match": "\\\\[\\\\']",
+              "name": "constant.character.escape.php"
+            }
+          ]
+        },
+        {
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.php"
+            }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.php"
+            }
+          },
+          "name": "string.quoted.double.php",
+          "patterns": [
+            {
+              "include": "#interpolation_double_quoted"
+            }
+          ]
+        }
+      ]
+    },
+    "brackets_function": {
+			"patterns": [
+				{
+					"begin": "(",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.arguments.begin.bracket.round.php"
+						}
+					},
+					"end": ")",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.arguments.end.bracket.round.php"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				}
+			]
+    },
+	"interpolation_double_quoted": {
+			"patterns": [
+				{
+					"match": "\\\\\"",
+					"name": "constant.character.escape.php"
+				},
+				{
+					"include": "#interpolation"
+				}
+			]
+		},
+    "interpolation": {
+			"patterns": [
+				{
+					"match": "\\\\[0-7]{1,3}",
+					"name": "constant.character.escape.octal.php"
+				},
+				{
+					"match": "\\\\x[0-9A-Fa-f]{1,2}",
+					"name": "constant.character.escape.hex.php"
+				},
+				{
+					"match": "\\\\u{[0-9A-Fa-f]+}",
+					"name": "constant.character.escape.unicode.php"
+				},
+				{
+					"match": "\\\\[nrtvef$\\\\]",
+					"name": "constant.character.escape.php"
+				},
+				{
+					"begin": "{(?=\\$.*?})",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.variable.php"
+						}
+					},
+					"end": "}",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.variable.php"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"include": "#variable-name"
+				}
+			]
+		},
+    "variable-name": {
+			"patterns": [
+				{
+					"include": "#var_global"
+				},
+				{
+					"include": "#var_global_safer"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "variable.other.php"
+						},
+						"2": {
+							"name": "punctuation.definition.variable.php"
+						},
+						"4": {
+							"name": "keyword.operator.class.php"
+						},
+						"5": {
+							"name": "variable.other.property.php"
+						},
+						"6": {
+							"name": "punctuation.section.array.begin.php"
+						},
+						"7": {
+							"name": "constant.numeric.index.php"
+						},
+						"8": {
+							"name": "variable.other.index.php"
+						},
+						"9": {
+							"name": "punctuation.definition.variable.php"
+						},
+						"10": {
+							"name": "string.unquoted.index.php"
+						},
+						"11": {
+							"name": "punctuation.section.array.end.php"
+						}
+					},
+					"match": "(?xi)\n((\\$)(?<name>[a-z_\\x{7f}-\\x{7fffffff}][a-z0-9_\\x{7f}-\\x{7fffffff}]*))\n(?:\n  (->)(\\g<name>)\n  |\n  (\\[)(?:(\\d+)|((\\$)\\g<name>)|([a-z_\\x{7f}-\\x{7fffffff}][a-z0-9_\\x{7f}-\\x{7fffffff}]*))(\\])\n)?"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "variable.other.php"
+						},
+						"2": {
+							"name": "punctuation.definition.variable.php"
+						},
+						"4": {
+							"name": "punctuation.definition.variable.php"
+						}
+					},
+					"match": "(?i)((\\${)(?<name>[a-z_\\x{7f}-\\x{7fffffff}][a-z0-9_\\x{7f}-\\x{7fffffff}]*)(}))"
+				}
+			]
+		},
+    "var_global": {
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.variable.php"
+				}
+			},
+			"match": "(\\$)((_(COOKIE|FILES|GET|POST|REQUEST))|arg(v|c))\\b",
+			"name": "variable.other.global.php"
+		},
+		"var_global_safer": {
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.variable.php"
+				}
+			},
+			"match": "(\\$)((GLOBALS|_(ENV|SERVER|SESSION)))",
+			"name": "variable.other.global.safer.php"
+		}
+  }
+}

@@ -1,0 +1,30 @@
+{
+    "name": "php-string-and-heredoc-syntax-highlighting",
+    "displayName": "PHP String and Heredoc Syntax Highlighting",
+    "description": "Adds embedded language support for php variables in heredoc strings, specifically concatenation within curly braces. Added semantic tokens for additional syntax highlighting, if wanted. Multiline support. Nested bracket coloring support.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "grammars": 
+        [
+            {
+                "scopeName": "variable.quoted.double.heredoc",
+                "path": "./syntaxes/vars-in-heredoc-php.json",
+                "injectTo": ["text.html.php", "source.php", "text.html.derivative"],
+                "embeddedLanguages": {
+                    "meta.embedded.quoted.double.php": "php",
+                    "meta.embedded.quoted.double.brackets.php": "php"
+                },
+                "tokenTypes": {
+                    "meta.embedded.quoted.double.php": "other",
+                    "meta.embedded.quoted.double.brackets.php": "other"
+                }
+            }
+        ]
+    }
+}
